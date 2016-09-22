@@ -72,6 +72,17 @@ const ProductVariantModel = BaseModel.extend({
   },
 
   /**
+    * Price of variant, formatted according to shop currency format string.
+    * For instance `"$10.00"`
+    * 
+    * @property formattedPrice
+    * @type {String}
+  */
+  get formattedPrice() {
+    return this.attrs.variant.formatted_price;
+  },
+
+  /**
     * Variant weight in grams. If no weight is defined grams will be `0`.
     * @property grams
     * @type {Number}
